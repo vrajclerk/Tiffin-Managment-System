@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    height: 100%;
+}
+body{
+    background: #ffff;
+    color: #2e2c35;
+    height: 100%;
+}
+#root{
+    overflow:auto;
+    height: 100%;
+}
+nav,footer{
+    flex-shrink: 0;
+}
+main{
+    flex-grow: 1;
+}
+.swiper-pagination-bullet-active{
+    background: #0f172a !important;
+}
+.swiper-pagination-bullet{
+    background: #2e2c35 !important;
+}
+.heroImage{
+    border-radius: 55px 0px 0px 55px;
+}
+.swiper-button-prev,
+.swiper-button-next{
+    border: 1px solid #eef2f2;
+    border-radius: 50%;
+    width: 2rem !important;
+    height: 2rem !important;
+    background: #0f172a;
+}
+.swiper-button-prev::after{
+    font-size: 15px !important;
+    font-weight: bold;
+    color: #eef2f2;
+    padding-top: 1.7px;
+    padding-right: 3px;
+}
+.swiper-button-next::after{
+    font-size: 15px !important;
+    font-weight: bold;
+    color: #eef2f2;
+    padding-top: 1.7px;
+    padding-left: 3px;
+}
+
+@media (max-width:550px) {
+    .heroImage{
+        border-radius: 20px 0px 0px 20px;
+        height: 60% !important;
+    }
+    .swiper-button-next::after,
+    .swiper-button-prev::after{
+        padding-top: 0px;
+    }
+}
+.chooseuscss{
+    font-family: 'Trochut', cursive;
+}
+@media (min-width:1024px) {
+    .lastimg{
+        height: 200px !important;
+    }
+    .heighta{
+        height: 100vh;
+    }
+}
+@media (min-width:600) {
+    .heighta{
+        height: 89vh !important;
+    }
+}
