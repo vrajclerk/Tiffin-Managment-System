@@ -62,7 +62,7 @@ function MealSubscription() {
           data.paymentStatus = "Success"
           dispatch(addOrder(data))
           toast.success("Order Placed Successfully")
-          navigate('/orders')
+          navigate('/')
         } else {
           toast.error("Unable To Place Order Try Again")
         }
