@@ -25,6 +25,7 @@ const foodSlice = createSlice({
       state.loading = false;
     },
     foodUpdate:(state,action)=>{
+      //state.foods = action.payload.foods;
       state.loading = false;
     },
     addFoodSuccess: (state, action) => {

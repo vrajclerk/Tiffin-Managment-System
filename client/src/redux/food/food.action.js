@@ -56,9 +56,9 @@ export const updateFood = (data) => async (dispatch) => {
       url: `http://localhost:4000/api/v1/food/${data.id}`,
       data,
     });
+    getAllFood(data.id)
     // window.location.reload()
     return dispatch(foodUpdate());
-   
   } catch (error) {
     return dispatch(foodFail(error.response.data.message));
   }
