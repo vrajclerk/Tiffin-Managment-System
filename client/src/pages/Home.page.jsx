@@ -27,7 +27,7 @@ function HomePage() {
       <HeroSlider />
       
       <Order />
-    
+      <Info />
     </div>
   )
 }

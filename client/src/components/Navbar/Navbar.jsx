@@ -11,7 +11,7 @@ function NavbarLg({ name }) {
       <div className='w-full md:flex hidden justify-between shadow items-center py-3 lg:px-16 md:px-12 sm:px-8 px-2'>
         <Link to="/" className='flex gap-1.5 items-center'>
           <img src={logo} className='h-[70px] object-contain' alt="" />
-          <h1 className='font-bold text-xl font-mono'>Tiffin Wala</h1>
+          <h1 className='font-bold text-xl font-mono'>Buddy</h1>
         </Link>
         <ul className='gap-4 flex items-center font-semibold '>
           <li><Link to="/provider">Tiffin Providers</Link></li>

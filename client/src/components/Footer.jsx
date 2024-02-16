@@ -8,7 +8,7 @@ function Footer() {
     <footer>
       <div className="py-4 bg-slate-800 sm:grid text-white sm:grid-cols-2 sm:px-4 md:grid md:grid-cols-3 px-5 lg:grid lg:grid-cols-3 mt-2">
         <div className="naem order-1 pt-5 md:pl-7 lg:flex flex-col items-center ">
-          <h1 className='font-bold text-3xl  md:text-4xl md:pt-1'>Tiffin Wala</h1>
+          <h1 className='font-bold text-3xl  md:text-4xl md:pt-1'>Buddy</h1>
           <p className='sm:text-xl sm:font-medium px-3 pt-4 text-lg font-normal md:px-0'>Your Everyday Meals</p>
           <p className='sm:text-xl sm:font-medium px-3 text-lg font-normal md:px-0'>Made Convenient</p>
         </div>
@@ -16,9 +16,9 @@ function Footer() {
           <h1 className="font-bold py-2  text-2xl">Contact Us</h1>
           <ul className='flex flex-col '>
             <li className='px-2 flex gap-2 items-center  text-lg'><MdEmail className=''
-            />tifinwala4@gmail.com</li>
+            />tester31190@gmail.com</li>
             <li className='px-2 flex gap-1 items-center text-lg'><BsFillTelephoneFill className=''
-            />7485962315 / 7854239621</li>
+            />8238133795 / 7016676270</li>
             <li className='px-2 py-3 flex gap-2 items-center  text-lg cursor-pointer'><BsFacebook color="primary" /> <BsInstagram sx={{ color: "pink[500]" }} /> <BsTwitter color="primary" /></li>
           </ul>
         </div>
@@ -33,7 +33,7 @@ function Footer() {
         </div>
       </div>
       <div className=" py-4 bg-slate-700 text-white">
-        <p className='text-normal text-center font-medium sm:text-lg sm:font-serif'>© Copyright 2022-2023 www.TiffinWala.com All rights reserved. Developed by TiffinWala</p>
+        <p className='text-normal text-center font-medium sm:text-lg sm:font-serif'>© Copyright 2023-2024 www.buddytiffin.com All rights reserved. Developed by Buddy</p>
       </div>
 
     </footer>
