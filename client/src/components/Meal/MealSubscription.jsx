@@ -6,7 +6,7 @@ import { MdEmail, MdDateRange } from 'react-icons/md'
 import { RiIncreaseDecreaseLine } from 'react-icons/ri'
 import { FiUser, FiPhone, FiClock } from 'react-icons/fi'
 import { addOrder } from '../../redux/order/order.action'
-import logo from '../TiffinWalaLogo.png'
+import logo from '../../images/logo.png'
 
 function MealSubscription() {
   const user = useSelector((state) => state.user.user)

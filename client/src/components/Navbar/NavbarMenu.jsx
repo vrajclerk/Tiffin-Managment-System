@@ -23,7 +23,7 @@ export default function NavbarMenu() {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        style={{ backgroundColor: 'orange', color: 'white' }}
+        style={{ backgroundColor: 'green', color: 'white' }}
         className='font-semibold flex gap-1.5 items-center '
       >
         <span>Login</span>

@@ -1,7 +1,7 @@
 import React from 'react'
 import {FaBars} from 'react-icons/fa'
 import {GrClose} from 'react-icons/gr'
-import logo from '../TiffinWalaLogo.png'
+import logo from '../../images/logo.png'
 
 function Navbar({open,setOpen}) {
   

@@ -3,15 +3,17 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import ProfileAvatar from './Avatar'
 import NavbarMenu from './NavbarMenu'
-import logo from '../TiffinWalaLogo.png'
+import logo from '../../images/logo.png'
+import logo1 from '../../images/name.png'
 
 function NavbarLg({ name }) {
   return (
     <>
       <div className='w-full md:flex hidden justify-between shadow items-center py-3 lg:px-16 md:px-12 sm:px-8 px-2'>
         <Link to="/" className='flex gap-1.5 items-center'>
-          {/* <img src={logo} className='h-[70px] object-contain' alt="" /> */}
-          <h1 className='font-bold text-xl font-mono'>Tiffin Buddy</h1>
+          <img src={logo} className='h-[80px] object-contain' alt="" />
+          <img src={logo1} className='bold h-[30px] object-contain' alt="" />
+          {/* <h1 className='font-bold text-xl font-mono'>{logo1}</h1> */}
         </Link>
         <ul className='gap-4 flex items-center font-semibold '>
           <li><Link to="/provider">Tiffin Providers</Link></li>
