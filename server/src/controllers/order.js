@@ -1,5 +1,6 @@
 const orderModel = require('../models/order')
 const foodModel =require('../models/food')
+const providerModel = require('../models/provider');
 const {sendEmail} = require('../utils/sendEmail')
 exports.addOrder = async(req,res) =>{
     try {
@@ -68,23 +69,40 @@ exports.deleteOrder = async(req,res)=>{
 }
 exports.updateOrderStatus = async(req,res) =>{
     try {
+        const role=req.body.role;
         const status = req.body.status
         const id = req.body._id
+        
+        let email1;
         let subject,message,email;
-         console.log(req.body);
-        if(status === "Delivered"){     
+       
+         if(role=="provider")
+         {
+          if(status === "Delivered"){     
             subject = "Delivered: Your Order for Food is Delivered Successfully"
             message = `Hi ${req.body.user.name} \n Your Order for ${req.body.food.name} has been delivered \n Thank You`
             email = req.body.user.email
-            console.log("done mail...")
-        }else{
+            console.log("hello")
+           }else{
+            subject = "Cancelled: Order has been Cancelled"
+            message = `Hi ${req.body.user.name} Your Order for ${req.body.food.name} has been Cancelled by ${req.body.provider.name}`
+            email = req.body.user.email
+            const quantity = req.body.food.quantity + req.body.quantity
+           const res= await foodModel.findByIdAndUpdate(req.body.food._id,{$set:{quantity}})
+          
+        }
+    }
+        else{
             subject = "Cancelled: Order has been Cancelled"
             message = `Hi ${req.body.provider.name} Your Order for ${req.body.food.name} has been Cancelled by ${req.body.user.name}`
-            email = req.body.provider.email
+            email = req.body.provider.email 
             const quantity = req.body.food.quantity + req.body.quantity
-            await foodModel.findByIdAndUpdate(req.body.food._id,{$set:{quantity}})
+             await foodModel.findByIdAndUpdate(req.body.food._id,{$set:{quantity}})
+            
         }
-        // await sendEmail({email,subject,message});
+
+
+          await sendEmail({email,subject,message});
 
         if(!id)
             return res.status(400).json({message:"No Order Found"})

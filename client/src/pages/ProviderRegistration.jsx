@@ -11,6 +11,7 @@ import { providerRegister } from '../redux/provider/provider.action'
 import { clearError } from '../redux/provider/provider.reducer'
 import logo from '../images/logo.png'
 import logo1 from '../images/name.png'
+import { logout } from '../redux/user/user.action'
 
 function ProviderRegistration() {
   const [name, setName] = useState("")
@@ -55,6 +56,7 @@ function ProviderRegistration() {
     if (provider.isProvider) {
       setIsSigning(false)
       toast.success("Registration Successfull")
+      dispatch(logout());
       navigate('/provider/dashboard');
     } else if (provider && provider.error) {
       toast.error("Invalid Credentials or Provider already exists")

@@ -9,6 +9,7 @@ import logo from '../images/logo.png'
 import logo1 from '../images/name.png'
 import { toast } from 'react-hot-toast'
 import { clearError } from '../redux/provider/provider.reducer'
+import { logout } from '../redux/user/user.action'
 function ProviderLogin() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -28,6 +29,7 @@ function ProviderLogin() {
     if (provider.isProvider) {
       setIsSigning(false)
       toast.success("Logged In Successfully")
+      dispatch(logout())
       navigate('/provider/dashboard/orders');
     } else if (provider && provider.error) {
       toast.error("Invalid Credentials")

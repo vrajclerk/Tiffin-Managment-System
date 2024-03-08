@@ -21,7 +21,8 @@ export default function OrderActionMenu({ order }) {
 
   useEffect(() => {
     if (order)
-      dispatch(updateOrder({ _id: order._id, status, user: order.user, provider: order.provider, food: order.food }))
+      dispatch(updateOrder({ _id: order._id, status,role:"provider",quantity:order.quantity,
+        user: order.user, provider: order.provider, food: order.food }))
   }, [dispatch,status])
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget)
