@@ -64,6 +64,25 @@ function MealSubscription() {
           toast.success("Order Placed Successfully")
           navigate('/')
   }
+  else {
+    toast.error("Unable To Place Order Try Again")
+  }
+},
+"prefill": {
+  "name": `${user.name}`,
+  "email": `${user.email}`,
+  "contact": "9999999999"
+},
+"notes": {
+  "address": "Razorpay Corporate Office"
+},
+"theme": {
+  "color": "#3399cc"
+}
+};
+var rzp1 = new window.Razorpay(options);
+rzp1.open()
+}
   return (
     <div className=''>
       <form action="" className='flex flex-col gap-2' onSubmit={handleSubmit}>
@@ -121,5 +140,5 @@ function MealSubscription() {
     </div>
   )
 }
-
-export default MealSubscription
+    
+export default MealSubscription;

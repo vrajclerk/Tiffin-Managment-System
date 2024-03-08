@@ -10,9 +10,10 @@ import "swiper/css/navigation";
 // import required modules
 
 import Navbar from './Navbar';
-import Footer from './Footer';
+// import Footer from './Footer';
 import profile1 from '../images/profile1.jpg';
 import img1 from '../images/chooseus-1.jpg';
+import Footer from "./Footer";
 const Ourteamslider=()=>{
  return (
     <>
@@ -49,6 +50,7 @@ const Ourteamslider=()=>{
         
         
       </Swiper>
+      {/* <Footer /> */}
       </div>
     </>
  );

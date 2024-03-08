@@ -13,11 +13,13 @@ function NavbarLg({ name }) {
         <Link to="/" className='flex gap-1.5 items-center'>
           <img src={logo} className='h-[80px] object-contain' alt="" />
           <img src={logo1} className='bold h-[30px] object-contain' alt="" />
+        
           {/* <h1 className='font-bold text-xl font-mono'>{logo1}</h1> */}
         </Link>
         <ul className='gap-4 flex items-center font-semibold '>
-          <li><Link to="/provider">Tiffin Providers</Link></li>
-          
+          <Link to='/about' className='text-black'>About Us</Link>
+        <Link to='/contact' className='text-black'>Contact Us</Link>
+        <li><Link to="/provider">Tiffin Providers</Link></li>
           {name ? <ProfileAvatar name={name} /> : <NavbarMenu />}
         </ul>
       </div>
