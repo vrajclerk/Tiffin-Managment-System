@@ -14,7 +14,8 @@ function MealPage() {
   const params = useParams();
   const id = params._id
   const dispatch = useDispatch();
-
+// useEffect  is used to dispatch an action to get food by id from the server when the component mounts
+  // it will run only once because of the empty dependency array []
   useEffect(() => {
     dispatch(getFoodById(id));
   }, [id, dispatch])
@@ -27,6 +28,7 @@ function MealPage() {
     providerName = food.food.provider.name
     providerId = food.food.provider._id
   }
+  // breadcrumbs for the top navigation bar
   let breadcrumbs = [
     <Link to='/' underline="hover" key="1" color="inherit" className='hover:underline'>
       Home
@@ -49,10 +51,12 @@ function MealPage() {
     >
       {providerName}
     </Link>,
-    <Typography key={'4'}>
+    //typography used to display the name of the food
+    <Typography key={'4'}> 
       {name}
     </Typography>
   ];
+  //checks if the food is loading then it will display a circular progress bar otherwise it displays the food information
   if (food.loading) {
     return (
       <div className='w-full flex items-center justify-center' style={{ height: '90vh' }}>

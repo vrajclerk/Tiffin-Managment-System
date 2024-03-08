@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer')
 exports.sendEmail = async (options) =>{
     const emailOptions = {
-        from:"anassain2002@gmail.com",
+        from:"tester31190@gmail.com",
         to:options.email,
         subject:options.subject,
         html:options.html

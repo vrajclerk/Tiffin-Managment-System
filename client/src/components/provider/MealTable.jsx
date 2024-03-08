@@ -22,7 +22,7 @@ import { styled } from '@mui/material/styles';
 import TableHead from '@mui/material/TableHead';
 import { deleteFood } from '../../redux/food/food.action';
 import FoodViewModal from './FoodViewModal';
-import { CircularProgress } from '@mui/material';
+import { CircularProgress } from '@mui/material'; //circular progress is used for 
 import UpdateFoodModel from './UpdateFoodModel';
 
 

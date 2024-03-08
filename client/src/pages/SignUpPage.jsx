@@ -8,7 +8,8 @@ import { GrSecure } from 'react-icons/gr'
 import { FiUser, FiPhone } from 'react-icons/fi'
 import { signUp } from '../redux/user/user.action'
 import { clearError } from '../redux/user/user.reducer'
-import logo from '../components/TiffinWalaLogo.png'
+import logo from '../images/logo.png'
+import logo1 from '../images/name.png'
 
 function SignUpPage() {
   const [name, setName] = useState("")
@@ -68,8 +69,9 @@ function SignUpPage() {
     <div>
       <div className='py-2 sm:px-8 px-2 shadow flex justify-between items-center'>
         <Link to="/" className='flex items-center'>
-          {/* <img src={logo} className='h-8 object-contain' alt="" /> */}
-          <h1 className='font-bold text-xl font-mono'>Tiffin wala</h1>
+        <img src={logo} className='h-8 object-contain' alt="" />
+          <img src={logo1} className='h-8 object-contain' alt="" />
+          {/* <h1 className='font-bold text-xl font-mono'>Tiffin Buddy</h1> */}
         </Link>
         <Link to="/" className='flex items-center gap-2'>
           <BiArrowBack />

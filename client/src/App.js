@@ -19,8 +19,6 @@ import ProviderOrders from "./components/provider/ProviderOrders";
 import ProviderMeals from "./components/provider/ProviderMeals";
 import OrdersPage from "./pages/Orders.page";
 import { getAllReview } from "./redux/review/review.action";
-import AboutusPara from "./components/AboutusPara";
-import ContactUs from "./components/ContactUs";
 
 // PrivateRoute
 const PrivateRoute = ({ children }) => {
@@ -55,8 +53,6 @@ function App() {
       <Route path="/provider/:_id" element={<ProviderPage />} />
       <Route path="/registerProvider" element={<ProviderRegistration />} />
       <Route path="/loginProvider" element={<ProviderLogin />} />
-      <Route path="/aboutus" element={<AboutusPara/>} />
-      <Route path="/contactus" element={<ContactUs/>} />
       <Route
         path="/provider/dashboard"
         element={

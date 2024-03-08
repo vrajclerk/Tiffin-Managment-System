@@ -6,7 +6,7 @@ import { MdEmail, MdDateRange } from 'react-icons/md'
 import { RiIncreaseDecreaseLine } from 'react-icons/ri'
 import { FiUser, FiPhone, FiClock } from 'react-icons/fi'
 import { addOrder } from '../../redux/order/order.action'
-import logo from '../TiffinWalaLogo.png'
+import logo from '../../images/logo.png'
 
 function MealSubscription() {
   const user = useSelector((state) => state.user.user)
@@ -51,7 +51,7 @@ function MealSubscription() {
       totalAmount
     }
     let options = {
-      "key": 'rzp_test_ItkJtRl0WmSdQK', 
+      "key": 'rzp_test_yu67T9aDVZ2U2O',
       "amount": Number(totalAmount) * 100,
       "currency": "INR",
       "name": "TiffinWala",
@@ -63,24 +63,6 @@ function MealSubscription() {
           dispatch(addOrder(data))
           toast.success("Order Placed Successfully")
           navigate('/')
-        } else {
-          toast.error("Unable To Place Order Try Again")
-        }
-      },
-      "prefill": {
-        "name": `${user.name}`,
-        "email": `${user.email}`,
-        "contact": "9999999999"
-      },
-      "notes": {
-        "address": "Razorpay Corporate Office"
-      },
-      "theme": {
-        "color": "#3399cc"
-      }
-    };
-    var rzp1 = new window.Razorpay(options);
-    rzp1.open()
   }
   return (
     <div className=''>
