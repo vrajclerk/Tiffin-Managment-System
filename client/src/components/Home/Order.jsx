@@ -32,7 +32,7 @@ const Order = () => {
                 })}
             </div>
             <div className='md:py-6 py-4 flex justify-center w-full'>
-                <Link to='/providers' className='px-2 py-1 text-white bg-slate-900 rounded font-semibold'>More Providers</Link>
+                <Link to='/providers' className='px-2 py-1 text-white bg-green-900 rounded font-semibold'>More Providers</Link>
             </div>
         </div>}
     </>
