@@ -51,7 +51,7 @@ function MealSubscription() {
       totalAmount
     }
     let options = {
-      "key": 'rzp_test_yu67T9aDVZ2U2O',
+      "key": 'rzp_test_ItkJtRl0WmSdQK', 
       "amount": Number(totalAmount) * 100,
       "currency": "INR",
       "name": "TiffinWala",

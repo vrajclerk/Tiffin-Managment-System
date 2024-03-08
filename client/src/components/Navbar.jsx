@@ -22,8 +22,8 @@ function NavbarLg({name}){
                 </div>}
             </ul>
         </div>
-   </>
-  )
+  </>
+ )
 }
 function NavbarSm({name}){
   const [open,setOpen] = useState(false);

@@ -110,11 +110,11 @@ export default function UpdateFoodModel({ open, setOpen ,foodDetails}) {
           <DialogContent dividers>
             <div className='flex flex-col gap-1'>
               <label htmlFor='name' className='font-semibold'>Name</label>
-              <input type="text" defaultValue={foodDetails.name} required name="name" id="name" placeholder="Enter Name of Meal" className="px-3 py-1 border rounded focus:outline-none" onChange={(e) => setName(e.target.value)} />
+              <input type="text" Value={foodDetails.name} required name="name" id="name" placeholder="Enter Name of Meal" className="px-3 py-1 border rounded focus:outline-none" onChange={(e) => setName(e.target.value)} />
             </div>
             <div className='flex flex-col gap-1'>
               <label htmlFor="price" className='font-semibold'>Price</label>
-              <input type="Number" defaultValue={foodDetails.price} required name="price" id="price" placeholder="Enter Price of Meal" className="px-3 py-1 border rounded focus:outline-none" onChange={(e) => setPrice(e.target.value)} />
+              <input type="Number"  Value={foodDetails.price} required name="price" id="price" placeholder="Enter Price of Meal" className="px-3 py-1 border rounded focus:outline-none" onChange={(e) => setPrice(e.target.value)} />
             </div>
             <div className='flex flex-col gap-1'>
               <label htmlFor="price" className='font-semibold'>Enter Per Day Quantity</label>
