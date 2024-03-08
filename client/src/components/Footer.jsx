@@ -6,7 +6,7 @@ import logo1 from '../images/name.png'
 function Footer() {
   return (
     <footer>
-      <div className="py-4 bg-slate-800 sm:grid text-white sm:grid-cols-2 sm:px-4 md:grid md:grid-cols-3 px-5 lg:grid lg:grid-cols-3 mt-2">
+      <div className="py-4 bg-green-900 sm:grid text-white sm:grid-cols-2 sm:px-4 md:grid md:grid-cols-3 px-5 lg:grid lg:grid-cols-3 mt-2">
         <div className="naem order-1 pt-5 md:pl-7 lg:flex flex-col items-center ">
         {/* <img src={logo1} className='h-8 object-contain' alt="" /> */}
           <h1 className='font-bold text-3xl  md:text-4xl md:pt-1'>Tiffin Buddy</h1>
@@ -33,8 +33,8 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className=" py-4 bg-slate-700 text-white">
-        <p className='text-normal text-center font-medium sm:text-lg sm:font-serif'>© Copyright 2023-2024 www.tiffnwala.com All rights reserved. Developed by Tiffin wala</p>
+      <div className=" py-4 bg-green-700 text-white">
+        <p className='text-normal text-center font-medium sm:text-lg sm:font-serif'>© Copyright 2023-2024 www.tiffnbuddy.com All rights reserved. Developed by Tiffin Buddy</p>
       </div>
 
     </footer>
