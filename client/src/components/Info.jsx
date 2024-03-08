@@ -10,8 +10,8 @@ function Info() {
         <img src="https://eathomie-com.s3.amazonaws.com/images/food-with-friends-1224.jpg" className='w-full h-full' alt="Info" />
       </div>
       <div className='sm:w-3/5 w-full flex flex-col gap-4 items-center justify-center' data-aos="fade-left" data-aos-duration="1500">
-        <h2 className='lg:text-4xl md:text-3xl sm:text-2xl text-xl md:w-2/3 text-center text-slate-900 font-semibold font-mono'>The Most Convenient Way to Order from Home Chefs Around You</h2>
-        <button className='md:w-2/3 px-2 bg-slate-800 rounded-md text-white py-2 md:text-lg md:font-semibold' onClick={() => navigate("/provider")}>Book Your Tiffin</button>
+        <h2 className='lg:text-4xl md:text-3xl sm:text-2xl text-xl md:w-2/3 text-center text-green-700 font-semibold font-mono'>The Most Convenient Way to Order from Home Chefs Around You</h2>
+        <button className='md:w-2/3 px-2 bg-green-800 rounded-md text-white py-2 md:text-lg md:font-semibold' onClick={() => navigate("/provider")}>Book Your Tiffin</button>
       </div>
     </div>
   )

@@ -105,7 +105,7 @@ function SignUpPage() {
               </div>
               {!passwordMatch && <small className='text-red-600'>* Password does not match</small>}
             </div>
-            <div className={`bg-slate-800 text-white py-2 shadow rounded-full ${isSigning ? 'opacity-70 cursor-not-allowed' : ''}`}>
+            <div className={`bg-orange-400 text-white py-2 shadow rounded-full ${isSigning ? 'opacity-70 cursor-not-allowed' : ''}`}>
               <input type="submit" value={`${isSigning ? 'Signing...' : 'Sign Up'}`} className={`h-full w-full cursor-pointer ${isSigning ? 'opacity-70 cursor-not-allowed' : ''}`} />
             </div>
             <div className='text-slate-900 font-semibold text-center'>
