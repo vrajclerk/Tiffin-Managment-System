@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 
 import Navbar from './Navbar';
 import Footer from './Footer';
+import profile1 from '../images/profile1.jpg';
 import img1 from '../images/chooseus-1.jpg';
 const Ourteamslider=()=>{
  return (
@@ -31,26 +32,18 @@ const Ourteamslider=()=>{
         className="mySwiper" >
         <SwiperSlide>
             <div className=" flex flex-col items-center text-center">
-                <img src={img1} alt="teammember img" style={{width:"11.4rem",borderRadius:"50%"}}/>
-                <h4 className="mt-2 text-xl font-medium">Kunal Hulke</h4>
-                 <p >Developer</p>
-                 <p className="px-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptatibus consequatur veritatis harum sunt sapiente! Ratione quae, officiis adipisci dolorem mollitia nihil at voluptatibus.</p>
+                <img src={profile1} alt="teammember img" style={{width:"11.4rem",borderRadius:"50%"}}/>
+                <h4 className="mt-2 text-xl font-medium">Vraj Clerk</h4>
+                 <p >Frontend Developer</p>
+                 {/* <p className="px-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptatibus consequatur veritatis harum sunt sapiente! Ratione quae, officiis adipisci dolorem mollitia nihil at voluptatibus.</p> */}
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className=" flex flex-col items-center text-center">
                 <img src={img1} alt="teammember img" style={{width:"11.4rem",borderRadius:"50%"}}/>
-                <h4 className="mt-2 text-xl font-medium">Anas Sain</h4>
-                 <p >Developer</p>
-                 <p className="px-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptatibus consequatur veritatis harum sunt sapiente! Ratione quae, officiis adipisci dolorem mollitia nihil at voluptatibus.</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div className=" flex flex-col items-center text-center">
-                <img src={img1} alt="teammember img" style={{width:"11.4rem",borderRadius:"50%"}}/>
-                <h4 className="mt-2 text-xl font-medium">Aniket Gupta</h4>
-                 <p >Designer</p>
-                 <p className="px-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptatibus consequatur veritatis harum sunt sapiente! Ratione quae, officiis adipisci dolorem mollitia nihil at voluptatibus.</p>
+                <h4 className="mt-2 text-xl font-medium">Parthiv Chaudhry</h4>
+                 <p >Backend Developer</p>
+                 {/* <p className="px-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptatibus consequatur veritatis harum sunt sapiente! Ratione quae, officiis adipisci dolorem mollitia nihil at voluptatibus.</p> */}
             </div>
         </SwiperSlide>
         
