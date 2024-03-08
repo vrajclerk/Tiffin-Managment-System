@@ -17,7 +17,8 @@ function NavbarLg({ name }) {
         </Link>
         <ul className='gap-4 flex items-center font-semibold '>
           <li><Link to="/provider">Tiffin Providers</Link></li>
-          
+          <li><Link to="/aboutus">About Us</Link></li>
+          <li><Link to="/contactus">Contact Us</Link></li>
           {name ? <ProfileAvatar name={name} /> : <NavbarMenu />}
         </ul>
       </div>
@@ -34,6 +35,7 @@ function NavbarSm({ name }) {
           <h1 className='font-bold text-xl font-mono'>Tiffin Buddy</h1>
         </Link>
         <div className='flex items-center gap-3'>
+
         {name ? <ProfileAvatar name={name} /> : <NavbarMenu />}
         </div>
       </div>
