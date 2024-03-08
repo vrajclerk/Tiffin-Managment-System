@@ -17,15 +17,12 @@ function NavbarLg({ name }) {
           {/* <h1 className='font-bold text-xl font-mono'>{logo1}</h1> */}
         </Link>
         <ul className='gap-4 flex items-center font-semibold '>
-<<<<<<< HEAD
+
           <Link to='/about' className='text-black'>About Us</Link>
         <Link to='/contact' className='text-black'>Contact Us</Link>
         <li><Link to="/provider">Tiffin Providers</Link></li>
-=======
-          <li><Link to="/provider">Tiffin Providers</Link></li>
-          <li><Link to="/aboutus">About Us</Link></li>
-          <li><Link to="/contactus">Contact Us</Link></li>
->>>>>>> b367e12996f2df55f6de758d7c28fc1825992146
+
+          
           {name ? <ProfileAvatar name={name} /> : <NavbarMenu />}
         </ul>
       </div>

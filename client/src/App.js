@@ -19,17 +19,17 @@ import ProviderOrders from "./components/provider/ProviderOrders";
 import ProviderMeals from "./components/provider/ProviderMeals";
 import OrdersPage from "./pages/Orders.page";
 import { getAllReview } from "./redux/review/review.action";
-<<<<<<< HEAD
-import AboutUspage from "./pages/AboutUspage";
-import ContactUs from "./components/ContactUs";
-=======
-import AboutusPara from "./components/AboutusPara";
 
 import AboutUspage from "./pages/AboutUspage";
 
-import ContactUs from "./components/ContactUs";
+
+
+
+
+
+
 import ContactUsPage from "./pages/ContactUsPage";
->>>>>>> b367e12996f2df55f6de758d7c28fc1825992146
+
 
 // PrivateRoute
 const PrivateRoute = ({ children }) => {
@@ -64,13 +64,11 @@ function App() {
       <Route path="/provider/:_id" element={<ProviderPage />} />
       <Route path="/registerProvider" element={<ProviderRegistration />} />
       <Route path="/loginProvider" element={<ProviderLogin />} />
-<<<<<<< HEAD
-      <Route path="/about" element={<AboutUspage />} />
-      <Route path="/contact" element={<ContactUs />} />
-=======
-      <Route path="/aboutus" element={<AboutUspage/>} />
-      <Route path="/contactus" element={<ContactUsPage/>} />
->>>>>>> b367e12996f2df55f6de758d7c28fc1825992146
+
+      
+      <Route path="/about" element={<AboutUspage/>} />
+      <Route path="/contact" element={<ContactUsPage/>} />
+
       <Route
         path="/provider/dashboard"
         element={
