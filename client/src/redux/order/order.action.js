@@ -63,7 +63,7 @@ export const updateUserOrder = (data) => async (dispatch) => {
   try {
     dispatch(orderRequest());
     const order = await axios({
-      method: "POST",
+      method: "PUT",
       url: `http://localhost:4000/api/v1/order/updateStatus`,
       data,
     });

@@ -71,11 +71,12 @@ exports.updateOrderStatus = async(req,res) =>{
         const status = req.body.status
         const id = req.body._id
         let subject,message,email;
-        
+         console.log(req.body);
         if(status === "Delivered"){     
             subject = "Delivered: Your Order for Food is Delivered Successfully"
             message = `Hi ${req.body.user.name} \n Your Order for ${req.body.food.name} has been delivered \n Thank You`
             email = req.body.user.email
+            console.log("done mail...")
         }else{
             subject = "Cancelled: Order has been Cancelled"
             message = `Hi ${req.body.provider.name} Your Order for ${req.body.food.name} has been Cancelled by ${req.body.user.name}`

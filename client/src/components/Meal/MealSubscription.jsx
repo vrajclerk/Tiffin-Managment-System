@@ -50,40 +50,16 @@ function MealSubscription() {
       date,
       totalAmount
     }
-    // let options = {
-    //   "key": 'rzp_test_yu67T9aDVZ2U2O',
-    //   "amount": Number(totalAmount) * 100,
-    //   "currency": "INR",
-    //   "name": "TiffinWala",
-    //   "description": "Test Transaction",
-    //   "image": logo,
-    //   "handler": function (response) {
-    //     if (response.razorpay_payment_id) {
-    //       data.paymentStatus = "Success"
-    //       dispatch(addOrder(data))
-    //       toast.success("Order Placed Successfully")
-    //       navigate('/')
-        
-    //     } else {
-    //       toast.error("Unable To Place Order Try Again")
-    //     }
-      
-    //   },
-    //   "prefill": {
-    //     "name": `${user.name}`,
-    //     "email": `${user.email}`,
-    //     "contact": "9999999999"
-    //   },
-    //   "notes": {
-    //     "address": "Razorpay Corporate Office"
-    //   },
-    //   "theme": {
-    //     "color": "#3399cc"
-    //   }
-    // };
-    // var rzp1 = new window.Razorpay(options);
-    // rzp1.open()
-    data.paymentStatus = "Success"
+    let options = {
+      "key": 'rzp_test_yu67T9aDVZ2U2O',
+      "amount": Number(totalAmount) * 100,
+      "currency": "INR",
+      "name": "TiffinWala",
+      "description": "Test Transaction",
+      "image": logo,
+      "handler": function (response) {
+        if (response.razorpay_payment_id) {
+          data.paymentStatus = "Success"
           dispatch(addOrder(data))
           toast.success("Order Placed Successfully")
           navigate('/')

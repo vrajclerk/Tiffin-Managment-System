@@ -65,7 +65,7 @@ app.use('/api/v1/provider',provider)
 app.use('/api/v1/food',food)
 app.use('/api/v1/order',order)
 app.use('/api/v1/address',address);
-// app.use('/api/v1/review',review);
+app.use('/api/v1/review',review);
 app.use('/api/v1/initialData',initialData)
 
 app.listen(process.env.PORT,()=>{
