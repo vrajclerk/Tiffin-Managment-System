@@ -112,7 +112,7 @@ function ProviderRegistration() {
               <label htmlFor="logo" className='font-semibold text-slate-800'>Add Logo</label>
               <input type="file" name="logo" id="logo" required onChange={(e) => setProviderLogo(e.target.files)} />
             </div>
-            <div className={`bg-slate-800 text-white py-2 shadow rounded-full ${isSigning ? 'opacity-70 cursor-not-allowed' : ''}`}>
+            <div className={`bg-orange-400 text-white py-2 shadow rounded-full ${isSigning ? 'opacity-70 cursor-not-allowed' : ''}`}>
               <input type="submit" value={`${isSigning ? 'Signing...' : 'Register'}`} className={`h-full w-full cursor-pointer ${isSigning ? 'opacity-70 cursor-not-allowed' : ''}`} />
             </div>
             <div className='text-slate-900 font-semibold text-center'>

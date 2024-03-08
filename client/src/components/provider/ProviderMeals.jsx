@@ -19,7 +19,7 @@ function ProviderMeals() {
         <div>
           <h1 className='font-semibold text-xl'>Manage Meals</h1>
         </div>
-        <button className='border bg-green-700 flex items-center gap-1 text-white px-2 py-1 rounded' onClick={() => setAddMealModal(true)}>
+        <button className='border bg-orange-400 flex items-center gap-1 text-white px-2 py-1 rounded' onClick={() => setAddMealModal(true)}>
           <AiOutlinePlus />
           <span>Add Meals</span>
         </button>

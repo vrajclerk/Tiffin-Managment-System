@@ -8,7 +8,7 @@ const AboutUspage =()=>{
         <>
         <AboutusPara/>
         <Ourteamslider/>
-        <Footer />
+        {/* <Footer /> */}
         </>
     );
 }

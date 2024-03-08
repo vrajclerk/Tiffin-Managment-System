@@ -64,7 +64,7 @@ function MealSubscription() {
       "key": 'rzp_test_yu67T9aDVZ2U2O',
       "amount": Number(totalAmount) * 100,
       "currency": "INR",
-      "name": "TiffinWala",
+      "name": "TiffinBuddy",
       "description": "Test Transaction",
       "image": logo,
       "handler": function (response) {
@@ -137,7 +137,7 @@ function MealSubscription() {
           <textarea type="time" value={address} name="address" rows={4} placeholder='Enter Your Address' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="address" required onChange={(e) => setAddress(e.target.value)} />
         </div>
         <div>
-          <input type="submit" value="Order Meal" className='bg-slate-900 text-white rounded px-3 py-2 cursor-pointer w-full' />
+          <input type="submit" value="Order Meal" className='bg-orange-400 text-white rounded px-3 py-2 cursor-pointer w-full' />
         </div>
       </form>
     </div>

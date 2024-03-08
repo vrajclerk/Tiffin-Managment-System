@@ -14,7 +14,7 @@ function Info() {
       <Fade direction='right'>
         <div className='w-full h-full flex flex-col gap-4 items-center justify-center'>
           <h2 className='lg:text-4xl md:text-3xl sm:text-2xl text-xl md:w-2/3 text-center text-slate-900 font-semibold font-mono'>The Most Convenient Way to Order from Home Chefs Around You</h2>
-          <button className='md:w-2/3 px-2 bg-green-800 rounded-md text-white py-2 md:text-lg md:font-semibold' onClick={() => navigate("/provider")}>Book Your Tiffin</button>
+          <button className='md:w-2/3 px-2 bg-orange-400 rounded-md text-white py-2 md:text-lg md:font-semibold' onClick={() => navigate("/provider")}>Book Your Tiffin</button>
         </div>
       </Fade>
     </div>
