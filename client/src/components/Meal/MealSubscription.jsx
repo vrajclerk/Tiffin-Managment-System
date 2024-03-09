@@ -6,12 +6,14 @@ import { MdEmail, MdDateRange } from 'react-icons/md'
 import { RiIncreaseDecreaseLine } from 'react-icons/ri'
 import { FiUser, FiPhone, FiClock } from 'react-icons/fi'
 import { addOrder } from '../../redux/order/order.action'
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+
 import logo from '../../images/logo.png'
 
 function MealSubscription() {
 
   const [location, setLocation] = useState(null);
-  const [address1, setAddress1] = useState(null);
+  const [address, setAddress] = useState("");
 
   useEffect(() => {
     // Get current location using Geolocation API
@@ -29,14 +31,14 @@ function MealSubscription() {
             .then((response) => response.json())
             .then((data) => {
               if (data.results && data.results.length > 0) {
-                setAddress1(data.results[0].formatted);
+                setAddress(data.results[0].formatted);
               } else {
-                setAddress1('Address not found');
+                setAddress('Address not found');
               }
             })
             .catch((error) => {
               console.error('Error fetching address:', error.message);
-              setAddress1('Error fetching address');
+              setAddress('Error fetching address');
             });
         },
         (error) => {
@@ -51,7 +53,7 @@ function MealSubscription() {
   const user = useSelector((state) => state.user.user)
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
+ 
   const [mobileNumber, setMobileNumber] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [date, setDate] = useState("");
@@ -173,13 +175,18 @@ function MealSubscription() {
           
         <div className=''>
           <label htmlFor="address" className='font-semibold'>Address (Allow location access_) </label>
-          <textarea type="time" value={address1} name="address" rows={4} placeholder='Enter Your Address' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="address" required onChange={(e) => setAddress1(e.target.value)} />
+          <textarea type="time" value={address} name="address" rows={4} placeholder='Enter Your Address' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="address" required onChange={(e) => setAddress(e.target.value)} />
         </div>
         <div>
           <input type="submit" value="Order Meal" className='bg-orange-400 text-white rounded px-3 py-2 cursor-pointer w-full' />
         </div>
       </form>
-    </div>
+
+      <div>
+           <AccessTimeIcon color='error'/> If you choose to cancel, you can do it within 60 seconds after placing the order...
+      </div>
+    </div>  
+
   )
 }
 export default  MealSubscription;
