@@ -14,6 +14,49 @@ import logo1 from '../images/name.png'
 import { logout } from '../redux/user/user.action'
 
 function ProviderRegistration() {
+  
+
+  const [location, setLocation] = useState(null);
+  const [address1, setAddress1] = useState(null);
+
+  useEffect(() => {
+    // Get current location using Geolocation API
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setLocation({ latitude, longitude });
+
+          // Fetch address information from OpenCage Geocoding API
+          const apiKey = '9e5f384a4a134589aa5c6bf0f498d191';
+          const geocodingUrl = `https://api.opencagedata.com/geocode/v1/json?key=${apiKey}&q=${latitude}+${longitude}&pretty=1`;
+
+          fetch(geocodingUrl)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.results && data.results.length > 0) {
+                setAddress1(data.results[0].formatted);
+              } else {
+                setAddress1('Address not found');
+              }
+            })
+            .catch((error) => {
+              console.error('Error fetching address:', error.message);
+              setAddress1('Error fetching address');
+            });
+        },
+        (error) => {
+          console.error('Error getting location:', error.message);
+        }
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
+  }, []);
+
+  console.log(location)
+  console.log(address1);
+
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -21,7 +64,7 @@ function ProviderRegistration() {
   const [phoneNumber, setPhoneNumber] = useState("")
   const [passwordMatch, setPasswordMatch] = useState(true)
   const [providerLogo, setProviderLogo] = useState("")
-  const [address, setAddress] = useState("");
+  const [address, setAddress] = useState(address1);
   const [isSigning, setIsSigning] = useState("");
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
@@ -35,7 +78,7 @@ function ProviderRegistration() {
       form.append("email", email);
       form.append("password", password);
       form.append("phoneNumber", phoneNumber);
-      form.append("address", address);
+      form.append("address", address1);
       if (providerLogo.length > 0)
         form.append("providerLogo", providerLogo[0])
 
@@ -77,8 +120,8 @@ function ProviderRegistration() {
           <span>Back to home</span>
         </Link>
       </div>
-      <div className='flex flex-col gap-4 sm:justify-center items-center sm:py-0 py-8' style={{ height: 'calc(100vh - 50px)' }}>
-        <p className='font-semibold'>Register with us to bring your tiffin service online</p>
+      <div className='flex flex-col gap-4 sm:justify-center items-center mt-8 sm:py-0 py-8' style={{ height: 'calc(100vh - 50px)' }}>
+        <p className='font-semibold text-2xl'> Provider Register</p>
         <div className='lg:w-1/3 md:w-2/5 sm:w-2/3 w-4/5'>
           <form action="" className='flex flex-col gap-5' onSubmit={handleSubmit}>
             <div className='flex items-center border bg-white w-full'>
@@ -93,9 +136,10 @@ function ProviderRegistration() {
               <span className='px-2 h-full'><FiPhone /></span>
               <input type="number" value={phoneNumber} name="number" placeholder='Enter Your Mobile Number' className='w-full h-full px-2 py-2 border-l focus:outline-none' id="phone" required onChange={(e) => setPhoneNumber(e.target.value)} />
             </div>
+            
             <div className='flex items-center border bg-white w-full'>
               <span className='px-2 h-full'><FaRegAddressCard /></span>
-              <input type="text" value={address} name="address" placeholder='Enter Your Address' className='w-full h-full px-2 py-2 border-l focus:outline-none' id="address" required onChange={(e) => setAddress(e.target.value)} />
+              <input type="text" value={address1} name="address" placeholder='Enter Your Address' className='w-full h-full px-2 py-2 border-l focus:outline-none' id="address" required onChange={(e) => setAddress1(e.target.value)} />
             </div>
             <div className='flex items-center border bg-white w-full'>
               <span className='px-2 h-full'><GrSecure /></span>

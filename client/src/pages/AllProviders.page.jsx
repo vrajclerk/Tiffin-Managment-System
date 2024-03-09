@@ -38,8 +38,8 @@ function AllProvidersPage() {
     }
   }
   
-  const handleSearch = () =>{
-
+  const handleSearch = (e) =>{
+ 
     let updatedSearchedProviders = []
     setIsSearch(true)
     if(searchData.length === 0){

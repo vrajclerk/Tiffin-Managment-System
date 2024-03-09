@@ -9,6 +9,45 @@ import { addOrder } from '../../redux/order/order.action'
 import logo from '../../images/logo.png'
 
 function MealSubscription() {
+
+  const [location, setLocation] = useState(null);
+  const [address1, setAddress1] = useState(null);
+
+  useEffect(() => {
+    // Get current location using Geolocation API
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setLocation({ latitude, longitude });
+
+          // Fetch address information from OpenCage Geocoding API
+          const apiKey = '9e5f384a4a134589aa5c6bf0f498d191';
+          const geocodingUrl = `https://api.opencagedata.com/geocode/v1/json?key=${apiKey}&q=${latitude}+${longitude}&pretty=1`;
+
+          fetch(geocodingUrl)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.results && data.results.length > 0) {
+                setAddress1(data.results[0].formatted);
+              } else {
+                setAddress1('Address not found');
+              }
+            })
+            .catch((error) => {
+              console.error('Error fetching address:', error.message);
+              setAddress1('Error fetching address');
+            });
+        },
+        (error) => {
+          alert("please allow location access for your current location")
+          console.error('Error getting location:', error.message);
+        }
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
+  }, []);
   const user = useSelector((state) => state.user.user)
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -133,8 +172,8 @@ function MealSubscription() {
           
           
         <div className=''>
-          <label htmlFor="address" className='font-semibold'>Address</label>
-          <textarea type="time" value={address} name="address" rows={4} placeholder='Enter Your Address' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="address" required onChange={(e) => setAddress(e.target.value)} />
+          <label htmlFor="address" className='font-semibold'>Address (Allow location access_) </label>
+          <textarea type="time" value={address1} name="address" rows={4} placeholder='Enter Your Address' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="address" required onChange={(e) => setAddress1(e.target.value)} />
         </div>
         <div>
           <input type="submit" value="Order Meal" className='bg-orange-400 text-white rounded px-3 py-2 cursor-pointer w-full' />

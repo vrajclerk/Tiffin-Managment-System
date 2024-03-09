@@ -6,7 +6,7 @@ import logo1 from '../images/name.png'
 function Footer() {
   return (
     <footer>
-      <div className="py-4 bg-orange-400 sm:grid text-white sm:grid-cols-2 sm:px-4 md:grid md:grid-cols-3 px-5 lg:grid lg:grid-cols-3 mt-2">
+      <div className="py-2 bg-orange-400 sm:grid text-white sm:grid-cols-2 sm:px-4 md:grid md:grid-cols-3 px-5 lg:grid lg:grid-cols-3 mt-2">
         <div className="naem order-1 pt-5 md:pl-7 lg:flex flex-col items-center ">
         {/* <img src={logo1} className='h-8 object-contain' alt="" /> */}
           <h1 className='font-bold text-3xl  md:text-4xl md:pt-1'>Tiffin Buddy</h1>
