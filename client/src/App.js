@@ -29,6 +29,8 @@ import AboutUspage from "./pages/AboutUspage";
 
 
 import ContactUsPage from "./pages/ContactUsPage";
+import CartPage from "./pages/CartPage";
+import { cartfoods } from "./redux/Cart/Cart.reducer";
 
 
 // PrivateRoute
@@ -37,6 +39,14 @@ const PrivateRoute = ({ children }) => {
   return provider && provider.isProvider ? children : <Navigate to="/" />;
 };
 
+const PrivateCartRoutes = ({ children }) => {
+  const cart = useSelector(cartfoods);
+  return cart && cart.length > 0 ? children : <Navigate to="/" />;
+};
+const PrivateUserRoutes = ({ children }) => {
+  const user = useSelector((state) => state.user);
+  return user  ? children : <Navigate to="/" />;
+};
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -58,13 +68,32 @@ function App() {
         <Route path="/signin" element={<SignInPage />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/provider" element={<AllProvidersPage />} />
-      <Route path="/food/:_id" element={<MealPage />} />
-      <Route path="/orders" element={<OrdersPage />} />
+     
+      <Route path="/orders" element={  <PrivateUserRoutes>
+        <OrdersPage />
+        </PrivateUserRoutes>} />
       <Route path="/providers" element={<AllProvidersPage />} />
       <Route path="/provider/:_id" element={<ProviderPage />} />
       <Route path="/registerProvider" element={<ProviderRegistration />} />
       <Route path="/loginProvider" element={<ProviderLogin />} />
+     
 
+      <Route
+      path="/cart/chekout"
+      element={
+        <PrivateCartRoutes>
+          <MealPage />
+        </PrivateCartRoutes>
+      }
+   / >
+   <Route
+      path="/cart"
+      element={
+        <PrivateUserRoutes>
+        <CartPage />
+        </PrivateUserRoutes>
+      }
+   / >
       
       <Route path="/about" element={<AboutUspage/>} />
       <Route path="/contact" element={<ContactUsPage/>} />

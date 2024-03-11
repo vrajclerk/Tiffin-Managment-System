@@ -22,6 +22,7 @@ function MealSubscription() {
       setEmail(user.email)
       setMobileNumber(user.phoneNumber)
     }else{
+      navigate("/signin")
       setName("")
       setEmail("")
     }

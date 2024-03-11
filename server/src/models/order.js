@@ -1,5 +1,7 @@
 const mongoose = require("mongoose")
 
+
+
 const orderSchema = new mongoose.Schema({
     user:{
         type:mongoose.Schema.Types.ObjectId,
@@ -9,11 +11,7 @@ const orderSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'providers'
     },
-    food:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"foods",
-        required:true
-    },
+    food:[],
     date:{
         type:String,
         required:true
@@ -25,10 +23,7 @@ const orderSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    quantity:{
-        type:Number,
-        required:true
-    },
+    
     totalAmount:{
         type:Number,
         required:true,

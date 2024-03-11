@@ -1,15 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  data: undefined,
-  loading: false,
-  error: undefined,
+  foods:[]
 };
 
-const initialDataSlice = createSlice({
-  name: "InitialData",
+const cartSlice = createSlice({
+  name: "Cart",
   initialState,
-  reducers: {
+  reducers: { 
     initialDataRequest: (state, action) => {
       state.loading = true;
     },

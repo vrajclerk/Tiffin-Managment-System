@@ -20,6 +20,8 @@ function ProviderRegistration() {
   const [address1, setAddress1] = useState(null);
 
   useEffect(() => {
+
+    alert("Allow Location access for your address")
     // Get current location using Geolocation API
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(

@@ -9,25 +9,22 @@ import MealSubscription from '../components/Meal/MealSubscription'
 import HomeLayout from '../layouts/Home.layout'
 import { getFoodById } from '../redux/food/food.action'
 import TopNavigation from '../components/TopNavigation'
+import { cartfoods } from '../redux/Cart/Cart.reducer';
 
 function MealPage() {
-  const params = useParams();
-  const id = params._id
+  // const params = useParams();
+  // const id = params._id
   const dispatch = useDispatch();
+  let cart =useSelector(cartfoods)
+  let total =0;
+
+  cart.map(food=>total +=(food.amount)* (food.price))
 // useEffect  is used to dispatch an action to get food by id from the server when the component mounts
   // it will run only once because of the empty dependency array []
-  useEffect(() => {
-    dispatch(getFoodById(id));
-  }, [id, dispatch])
-  const food = useSelector((state) => state.foods)
-  let name = ""
-  let providerName = ""
-  let providerId = ""
-  if (food && food.food) {
-    name = food.food.name
-    providerName = food.food.provider.name
-    providerId = food.food.provider._id
-  }
+  // useEffect(() => {
+  //   dispatch(getFoodById(id));
+  // }, [id, dispatch])
+  
   // breadcrumbs for the top navigation bar
   let breadcrumbs = [
     <Link to='/' underline="hover" key="1" color="inherit" className='hover:underline'>
@@ -36,34 +33,26 @@ function MealPage() {
     <Link
       underline="hover"
       key="2"
-      to='/provider'
+      to='/cart'
       color="inherit"
       className='hover:underline'
     >
-      Providers
+     Cart
     </Link>,
-    <Link
-      underline="hover"
-      key="3"
-      to={`/provider/${providerId}`}
-      color="inherit"
-      className='hover:underline'
-    >
-      {providerName}
-    </Link>,
+    
     //typography used to display the name of the food
     <Typography key={'4'}> 
-      {name}
+      checkout
     </Typography>
   ];
   //checks if the food is loading then it will display a circular progress bar otherwise it displays the food information
-  if (food.loading) {
-    return (
-      <div className='w-full flex items-center justify-center' style={{ height: '90vh' }}>
-        <CircularProgress />
-      </div>
-    )
-  }
+  // if (food.loading) {
+  //   return (
+  //     <div className='w-full flex items-center justify-center' style={{ height: '90vh' }}>
+  //       <CircularProgress />
+  //     </div>
+  //   )
+  // }
 
 
   return (
@@ -73,10 +62,10 @@ function MealPage() {
       </div>
       <div className='md:flex lg:gap-8 gap-4 lg:px-16 md:px-6 px-2 pb-4'>
         <div className='md:w-1/2'>
-          <MealDetail />
+          <MealDetail total={total}/>
         </div>
         <div className='md:sticky top-0 z-10 md:mt-0 mt-20 bg-white md:w-1/2 py-4'>
-          <MealSubscription />
+          <MealSubscription total={total} />
         </div>
       </div>
     </>
