@@ -26,10 +26,10 @@ exports.getAllReview = async(req,res) =>{
     try {
 
        const reviews = await reviewModal.find().populate("user");
-
+    console.log(reviews)
        if(reviews.length == 0)
             return res.status(404).json({message:"No Review Found"});
-        const filteredReview = reviews.filter((review) => review.rating >= 4)
+        const filteredReview = reviews.filter((review) => review.rating >= 2)
         return res.status(200).json({reviews:filteredReview});
     } catch (error) {
         return res.status(500).json({message:error.message})

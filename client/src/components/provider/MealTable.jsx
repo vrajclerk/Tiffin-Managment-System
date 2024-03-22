@@ -164,6 +164,7 @@ export default function ProductPage() {
                 <StyledTableCell>Name</StyledTableCell>
                 <StyledTableCell align='center'>Price</StyledTableCell>
                 <StyledTableCell align='center'>Quantity Left</StyledTableCell>
+                <StyledTableCell align='center no-wrap'>Tifin items</StyledTableCell>
                 <StyledTableCell align='center'>Type</StyledTableCell>
                 <StyledTableCell align='left'>Image</StyledTableCell>
                 <StyledTableCell align='center'>Actions</StyledTableCell>
@@ -180,8 +181,9 @@ export default function ProductPage() {
                   </StyledTableCell>
                   <StyledTableCell align='center'>₹{food.price}</StyledTableCell>
                   <StyledTableCell align='center'>{food.quantity}</StyledTableCell>
+                  <StyledTableCell align='center'>{food.description}</StyledTableCell>
                   <StyledTableCell align='center'>{`${food.isVeg ? 'Veg' : "Non-Veg"}`}</StyledTableCell>
-                  <StyledTableCell align='center'>
+                  <StyledTableCell align='center'>  
                     <img src={food.image} alt="" className='w-20 h-20' />
                   </StyledTableCell>
                   <StyledTableCell align='center'>

@@ -54,6 +54,7 @@ function MealSubscription({total}) {
         }
       );
     } else {
+      
       console.error('Geolocation is not supported by this browser.');
     }
   }, []);
@@ -118,7 +119,7 @@ function MealSubscription({total}) {
         if (response.razorpay_payment_id) {
           data.paymentStatus = "Success"
           dispatch(addOrder(data))
-          toast.success("Order Placed Successfully")
+          toast.success("Order Booked  Successfully")
          
           navigate('/')
           
@@ -149,7 +150,7 @@ function MealSubscription({total}) {
   return (
     <div className=''>
       <form action="" className='flex flex-col gap-2 mb-5' onSubmit={handleSubmit}>
-        <h2 className='font-semibold text-xl text-center md:py-0 py-2'>Order Your Tiffin Know</h2>
+        <h2 className='font-semibold text-xl text-center md:py-0 py-2'>Book Your Tiffin Know</h2>
         <div>
           <label htmlFor="name" className='font-semibold'>Name</label>
           <div className='flex items-center border bg-white w-full'>
@@ -180,7 +181,7 @@ function MealSubscription({total}) {
           <textarea type="time" value={address} name="address" rows={4} placeholder='Enter Your Address' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="address" required onChange={(e) => setAddress(e.target.value)} />
         </div>
         <div>
-          <input type="submit" value="Order Meal" className='bg-orange-400 text-white rounded px-3 py-2 cursor-pointer w-full' />
+          <input type="submit" value="Book Meal" className='bg-orange-400 text-white rounded px-3 py-2 cursor-pointer w-full' />
         </div>
       </form>
 

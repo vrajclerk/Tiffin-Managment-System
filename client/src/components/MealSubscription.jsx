@@ -61,6 +61,7 @@ function MealSubscription() {
           dispatch(addOrder(data))
           window.alert("Order Placed Succefully")
           navigate('/orders')
+          
         }else{
           window.alert("Unable To Place Order Try Again")
         }

@@ -44,7 +44,8 @@ const PrivateCartRoutes = ({ children }) => {
   return cart && cart.length > 0 ? children : <Navigate to="/" />;
 };
 const PrivateUserRoutes = ({ children }) => {
-  const user = useSelector((state) => state.user);
+  const{user} = useSelector((state) => state.user);
+  console.log(user)
   return user  ? children : <Navigate to="/" />;
 };
 function App() {
@@ -53,7 +54,7 @@ function App() {
     if (localStorage.providerToken) dispatch(getProviderDetails());
     else if (localStorage.userToken) dispatch(getUserDetails());
     dispatch(getAllProviders());
-    dispatch(getAllReview());
+    dispatch(getAllReview()); 
   }, [dispatch]);
 
   const navigate = useNavigate();
@@ -90,10 +91,10 @@ function App() {
       path="/cart"
       element={
         <PrivateUserRoutes>
-        <CartPage />
+         <CartPage />
         </PrivateUserRoutes>
       }
-   / >
+   />
       
       <Route path="/about" element={<AboutUspage/>} />
       <Route path="/contact" element={<ContactUsPage/>} />

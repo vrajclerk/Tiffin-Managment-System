@@ -8,7 +8,7 @@ const Order = () => {
   return (
     <>
         {providers && <div className='lg:px-12 md:px-8 px-2.5'>
-            <h2 className='text-2xl font-semibold py-2'>Order Your Tiffin Online</h2>
+            <h2 className='text-2xl font-semibold py-2'>Book Your Tiffin Online</h2>
             <div className='md:grid grid-cols-3 hidden items-center gap-4'>
                 {providers.map((item,index) =>{
                     if(index <= 2){
@@ -32,7 +32,7 @@ const Order = () => {
                 })}
             </div>
             <div className='md:py-6 py-4 flex justify-center w-full'>
-                <Link to='/providers' className='px-2 py-1 text-white bg-orange-400 rounded font-semibold'>More Providers</Link>
+                <Link to='/providers' className='px-2 py-1 text-white bg-orange-500 rounded font-semibold'>More Providers</Link>
             </div>
         </div>}
     </>

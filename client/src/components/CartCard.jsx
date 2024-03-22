@@ -33,7 +33,7 @@ const CartCard = ({food}) => {
                         
                         dispatch(decrementProductAmount(food));
                       }}
-                      className="px-4 py-2  bg-green-500 text-white rounded-l hover:bg-green-300 focus:outline-none focus:ring focus:border-black-300"
+                      className="px-4 py-2  bg-gray-300 text-white rounded-l hover:bg-orange-400 focus:outline-none focus:ring focus:border-black-300"
                     >
                       <span className="text-lg">-</span>
                     </button>
@@ -44,7 +44,7 @@ const CartCard = ({food}) => {
                       onClick={() => {
                         dispatch(incrementProductAmount(food));
                       }}
-                      className="px-4 py-2 bg-green-500 text-white rounded-r hover:bg-green-600 focus:outline-none focus:ring focus:border-blue-300"
+                      className="px-4 py-2 bg-gray-300 text-white rounded-r hover:bg-orange-400 focus:outline-none focus:ring focus:border-blue-300"
                     >
                       <span className="text-sm">+</span>
                     </button>

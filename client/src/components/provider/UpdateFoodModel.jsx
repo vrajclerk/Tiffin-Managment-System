@@ -94,7 +94,7 @@ export default function UpdateFoodModel({ open, setOpen ,foodDetails}) {
     setDescription("")
  //  image = " "
     setVeg(false)
-    navigate('/provider/dashboard/meals')
+    navigate('/provider/dashboard/orders')
   }
   return (
     <div>
