@@ -45,6 +45,7 @@ function NavbarLg({ name }) {
 }
 function NavbarSm({ name }) {
   const cart = useSelector(cartfoods)
+  console.log(cart)
   const user=useSelector((state)=>state.user.user)
   return (
     <>

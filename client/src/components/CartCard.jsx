@@ -17,10 +17,11 @@ const CartCard = ({food}) => {
     <div className='   lg:mx-8 border shadow mb-2' >
 
                 <div className='flex '>
-                   <img  className='h-20 w-20'src={food.image}/>
+                   <img  className='h-28 w-28'src={food.image}/>
                     <div className='w-full px-4 flex justify-between  gap-10 py-4'>
                     <div className='flex flex-col items-center justify-center'><h2 className='font-bold text-xl '>{food.name}</h2>
                     <p className='flex gap-1 items-center'><span className='font-semibold'>{food.provider.name}</span></p>
+                    <p className='flex gap-1 items-center'><span className='font-semibold'>₹{food.price}</span></p>
                     </div>
                     <div className='flex flex-col gap-5 justify-center items-center'>
                     <div className="flex items-center">
