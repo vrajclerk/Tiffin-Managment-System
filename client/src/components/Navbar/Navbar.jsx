@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import ProfileAvatar from './Avatar'
 import NavbarMenu from './NavbarMenu'
-// import logo from '../../images/logo2.png'
+ import logo1 from '../../images/logo2.png'
 import logo from '../../images/logo1.png'
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -16,7 +16,7 @@ function NavbarLg({ name }) {
     <>
       <div className='w-full md:flex hidden justify-between shadow items-center py-3 lg:px-16 md:px-12 sm:px-8 px-2'>
         <Link to="/" className='flex gap-1.5 items-center'>
-         {/* <img src={logo} className='h-[80px] w-500  object-contain  ' alt="" /> */}
+         <img src={logo1} className='h-[80px] w-500  object-contain  ' alt="" />
          <img src={logo} className='h-[40px] w-500  object-contain  ' alt="" />
         
         
@@ -53,7 +53,8 @@ function NavbarSm({ name }) {
     <>
       <div className='flex md:hidden px-4 py-2 shadow justify-between'>
         <Link to="/" className='flex items-center'>
-          <img src={logo} className='h-[44px] object-contain' alt="" />
+        <img src={logo1} className='h-[70px] w-500  object-contain  ' alt="" />
+          <img src={logo} className='h-[40px] object-contain' alt="" />
           
         </Link>
        
