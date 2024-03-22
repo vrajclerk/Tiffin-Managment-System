@@ -2,6 +2,7 @@ import {  useRef ,useImperativeHandle, forwardRef } from "react";
 import{createPortal} from 'react-dom'
 import { addToCart, clearCart } from "../../redux/Cart/Cart.reducer";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 
 const Example = forwardRef(function Example({childern},ref) {
@@ -22,6 +23,7 @@ const Example = forwardRef(function Example({childern},ref) {
     function handleReplace(fooditem){
         dispatch(clearCart())
         dispatch(addToCart(fooditem))
+        toast.success("Tiffin added to the cart!")
         dialoge.current.close()
 
     }
