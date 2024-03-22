@@ -21,7 +21,7 @@ function ProviderCard({ providerLogo, name, address, rating, id }) {
         <div className='flex flex-col gap-1 p-2 text-slate-900 font-sans'>
           <div className='text-lg font-semibold flex justify-between items-center'>
             <h1>{name}</h1>
-            <span className='flex items-center bg-orange-400 rounded-lg px-1 text-white'><small>{`${rating === 0 ? 'New' : rating}`}</small><AiFillStar fontSize={"medium"} /></span>
+            <span className='flex items-center bg-orange-500 rounded-lg px-1 text-white'><small>{`${rating === 0 ? 'New' : rating}`}</small><AiFillStar fontSize={"medium"} /></span>
           </div>
           <p className='text-sm'>Veg, Non-Veg, Lunch, Dinner</p>
           <p className='text-gray-500'>Time: 8:00 am To 8:30 pm</p>

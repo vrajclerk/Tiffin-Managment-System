@@ -11,6 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import { logout } from '../../redux/user/user.action';
 import { useNavigate } from 'react-router-dom';
+import { clearCart } from '../../redux/Cart/Cart.reducer';
 
 function ProfileAvatar({ name }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -24,7 +25,9 @@ function ProfileAvatar({ name }) {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const handleLogout = (e) => {
+    dispatch(clearCart());
     dispatch(logout());
+
     navigate('/')
   }
   return (

@@ -5,7 +5,7 @@ import { BiArrowBack } from 'react-icons/bi'
 import { MdEmail } from 'react-icons/md'
 import { GrSecure } from 'react-icons/gr'
 import { loginProvider } from '../redux/provider/provider.action'
-import logo from '../images/logo.png'
+import logo from '../images/logo1.png'
 import logo1 from '../images/name.png'
 import { toast } from 'react-hot-toast'
 import { clearError } from '../redux/provider/provider.reducer'
@@ -43,7 +43,7 @@ function ProviderLogin() {
       <div className='py-2 sm:px-8 px-2 shadow flex justify-between items-center'>
         <Link to="/" className='flex items-center'>
           <img src={logo} className='h-8 object-contain' alt="" />
-          <img src={logo1} className='h-8 object-contain' alt="" />
+         
           {/* <h1 className='font-bold text-xl font-mono'>Tiffin Buddy</h1> */}
         </Link>
         <Link to="/" className='flex items-center gap-2'>
@@ -63,7 +63,7 @@ function ProviderLogin() {
               <span className='px-2 h-full'><GrSecure /></span>
               <input type="password" value={password} name="password" placeholder='Enter Your password' className='w-full h-full px-2 py-2 border-l focus:outline-none' id="password" required onChange={(e) => setPassword(e.target.value)} />
             </div>
-            <div className={`bg-orange-400 text-white py-2 shadow rounded-full ${isSigning ? 'opacity-70 cursor-not-allowed' : ''}`}>
+            <div className={`bg-orange-500 text-white py-2 shadow rounded-full ${isSigning ? 'opacity-70 cursor-not-allowed' : ''}`}>
               <input type="submit" value={`${isSigning ? 'Signing...' : 'Sign In'}`} className={`h-full w-full cursor-pointer ${isSigning ? 'opacity-70 cursor-not-allowed' : ''}`} />
             </div>
             <div className='text-slate-900 font-semibold text-center'>

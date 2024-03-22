@@ -124,15 +124,15 @@ exports.updateOrderStatus = async (req, res) => {
         email = req.body.user.email;
         console.log("hello");
       } else {
-        subject = "Cancelled: Order has been Cancelled";
-        message = `Hi ${req.body.user.name} Your Order for "has been Cancelled by "`;
-        email = req.body.user.email;
+       
         let dataArray = req.body.food;
         console.log("dataarray", dataArray);
         let provider_id = req.body.provider;
         const foodArray = await foodModel
           .find({ provider: req.body.provider })
           .populate("provider");
+
+        const provider_name=foodArray[0].provider.name;
         console.log("foodarray", foodArray);
         // change quantiti logic
         for (const food of foodArray) {
@@ -149,18 +149,23 @@ exports.updateOrderStatus = async (req, res) => {
               $set: { quantity: newQuantity },
             });
           }
+         
           // If no matching data is found, you can handle it accordingly
           // (e.g., leave the quantity unchanged or set it to a default value)
         }
-      }
-    } else {
+
+        
       subject = "Cancelled: Order has been Cancelled";
-      message = `Hi ${req.body.user.name} Your Order for ${req.body.food.name} has been Cancelled by ${req.body.user.name}`;
+      message = `Hi ${req.body.user.name} Your Order for "has been Cancelled by ${provider_name}`;
       email = req.body.user.email;
+      }
+      
+    } else {
+      
       
       let dataArray = req.body.food;
         console.log("dataarray", dataArray);
-        let provider_id = req.body.provider;
+        let provider_email = req.body.provider.email;
         const foodArray = await foodModel
           .find({ provider: req.body.provider })
           .populate("provider");
@@ -180,7 +185,11 @@ exports.updateOrderStatus = async (req, res) => {
               $set: { quantity: newQuantity },
             });
           }
+          
     }
+    subject = "Cancelled: Order has been Cancelled";
+      message = `Hi ${req.body.provider.name} Your Order for tiffin has been Cancelled by ${req.body.user.name}`;
+      email = provider_email;
 }
 
     await sendEmail({ email, subject, message });

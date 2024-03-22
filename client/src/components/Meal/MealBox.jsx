@@ -52,7 +52,7 @@ function MealBox({ foods }) {
           : dispatch(addToCart(food));
   
         // Show success toast
-        toast.success('Item added to the cart!');
+        toast.success('Tifin added to the cart!');
       } else {
         // Navigate to the sign-up page
         alert('Please log in to continue.');
@@ -117,7 +117,7 @@ function MealBox({ foods }) {
                       
                       <button
                         onClick={()=>handleAddtocart(food)}
-                        className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                        className="bg-orange-500 hover:bg-orange-500 text-white font-semibold hover:text-white py-2 px-4 border border-white   hover:border-transparent rounded"
                       >
                         Add to cart
                       </button>

@@ -23,7 +23,7 @@ export default function NavbarMenu() {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
-        style={{ backgroundColor: "orange", color: "white" }}
+        style={{ backgroundColor: "#ed8936", color: "white" }}
         className="Btn hover:BtnHover active:BtnActive "
       >
       <div class="sign">

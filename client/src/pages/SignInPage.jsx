@@ -7,7 +7,7 @@ import { MdEmail } from 'react-icons/md'
 import { GrSecure } from 'react-icons/gr'
 import { login } from '../redux/user/user.action'
 import { clearError } from '../redux/user/user.reducer'
-import logo from '../images/logo.png'
+import logo from '../images/logo1.png'
 import logo1 from '../images/name.png'
 
 function SignInPage() {
@@ -43,7 +43,7 @@ function SignInPage() {
       <div className='py-2 sm:px-8 px-2 shadow flex justify-between items-center'>
         <Link to="/" className='flex items-center'>
         <img src={logo} className='h-8 object-contain' alt="" />
-          <img src={logo1} className='h-8 object-contain' alt="" />
+          
           {/* <h1 className='font-bold text-xl font-mono'>Tiffin Buddy</h1> */}
         </Link>
         <Link to="/" className='flex items-center gap-2'>
@@ -52,7 +52,7 @@ function SignInPage() {
         </Link>
       </div>
       <div className='flex flex-col gap-10 sm:justify-center items-center sm:py-0 py-8' style={{ height: 'calc(100vh - 50px)' }}>
-        <h1 className='text-center w-full text-green-900 md:text-3xl text-xl font-semibold'>SignIn</h1>
+        <h1 className='text-center w-full text-slate-900 md:text-3xl text-xl font-semibold'>SignIn</h1>
         <div className='lg:w-1/3 md:w-2/5 sm:w-2/3 w-4/5'>
           <form action="" className='flex flex-col gap-8' onSubmit={handleSubmit}>
             <div className='flex items-center border bg-white w-full'>
@@ -63,10 +63,10 @@ function SignInPage() {
               <span className='px-2 h-full'><GrSecure /></span>
               <input type="password" value={password} name="password" placeholder='Enter Your password' className='w-full h-full px-2 py-2 border-l focus:outline-none' id="password" required onChange={(e) => setPassword(e.target.value)} />
             </div>
-            <div className={`bg-orange-400 text-white py-2 shadow rounded-full ${isSigning ? 'opacity-70 cursor-not-allowed' : ''}`}>
+            <div className={`bg-orange-500 text-white py-2 shadow rounded-full ${isSigning ? 'opacity-70 cursor-not-allowed' : ''}`}>
               <input type="submit" value={`${isSigning ? 'Signing...' : 'Sign In'}`} className={`h-full w-full cursor-pointer ${isSigning ? 'opacity-70 cursor-not-allowed' : ''}`} />
             </div>
-            <div className='text-green-900 font-semibold text-center'>
+            <div className='text-slate-900 font-semibold text-center'>
               <Link to="/signup">Don't Have Account? Sign Up with us</Link>
             </div>
           </form>

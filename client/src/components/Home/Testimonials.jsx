@@ -15,6 +15,7 @@ function Testimonials() {
       if(reviews)
         setSlidesData(reviews)
     },[reviews])
+    console.log(slidesData)
     if(!reviews || reviews.length===0){
       return(
         <></>
