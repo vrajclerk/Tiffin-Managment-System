@@ -80,21 +80,22 @@ function OrdersPage() {
     <div className='md:px-8 px-1 py-4'>
       <ReviewModal open={reviewModal} setOpen={setReviewModal} order={activeOrder} />
       <TopNavigation breadcrumbs={breadcrumbs} />
-      <h1 className='text-2xl font-semibold '>My Orders</h1>
+      <h1 className='text-3xl font-semibold text-center'>My Orders</h1>
      { console.log(orders)}
       {orders && orders?.length !== 0 ? (
         
         <div className='md:flex flex-col gap-4 pt-4 w-full'>
-          {orders.map((order, idx) => (
+          {orders.slice().reverse().map((order, idx) => (
             <div className='gap-2 border-b py-2' key={idx}>
-              <div className='w-32 h-28 overflow-hidden'>
-                <img src={order?.provider?.providerLogo
-                } alt='' />
-              </div>
+              
               <div className='flex justify-between items-center'>
                 <div>
+                <p>
+                <span className='font-semibold text-xl'>{order?.provider?.name}</span>
+                </p>
                   <p>
-                    Order Id: {order._id}<span className='font-semibold'>{
+                    Order Id: <span className='font-semibold'>{order._id.slice(-8)    }</span>
+                    <span className='font-semibold'>{
                       order.food.map((food, index) => (
                         <div key={food._id}>
                           {`${index + 1}. ${food.name} - Quantity: ${food.amount}`}

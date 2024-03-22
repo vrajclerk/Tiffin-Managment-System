@@ -118,7 +118,7 @@ export default function UpdateFoodModel({ open, setOpen ,foodDetails}) {
             </div>
             <div className='flex flex-col gap-1'>
               <label htmlFor="price" className='font-semibold'>Enter Per Day Quantity</label>
-              <input type="Number" value={quantity} required name="quantity" id="quantity" placeholder="Enter Quantity" className="px-3 py-1 border rounded focus:outline-none" onChange={(e) => setQuantity(e.target.value)} />
+              <input type="Number" value={foodDetails.quantity} required name="quantity" id="quantity" placeholder="Enter Quantity" className="px-3 py-1 border rounded focus:outline-none" onChange={(e) => setQuantity(e.target.value)} />
             </div>
             <div className='flex flex-col gap-1'>
               <label htmlFor="type" className='font-semibold'>Type</label>
@@ -130,7 +130,7 @@ export default function UpdateFoodModel({ open, setOpen ,foodDetails}) {
             </div>
             <div className='flex flex-col gap-1'>
               <label htmlFor="description" className='font-semibold'>Description</label>
-              <textarea type="Number" value={description} required rows={3} name="desctiption" id="description" placeholder="Enter Description of Meal" className="px-3 py-1 border rounded focus:outline-none" onChange={(e) => setDescription(e.target.value)} />
+              <textarea type="Number" value={foodDetails.description} required rows={3} name="desctiption" id="description" placeholder="Enter Description of Meal" className="px-3 py-1 border rounded focus:outline-none" onChange={(e) => setDescription(e.target.value)} />
             </div>
            
           </DialogContent>
@@ -143,7 +143,3 @@ export default function UpdateFoodModel({ open, setOpen ,foodDetails}) {
   );
 }
 
-{/* <div className='flex flex-col gap-1'>
-<label htmlFor="image" className='font-semibold'>Image</label>
-<input type="file" value={image} required name="price" id="image" placeholder="Enter Price of Meal" onChange={handleImage} />
-</div> */}

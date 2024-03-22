@@ -10,6 +10,7 @@ import logo1 from '../images/name.png'
 import { toast } from 'react-hot-toast'
 import { clearError } from '../redux/provider/provider.reducer'
 import { logout } from '../redux/user/user.action'
+import { clearCart } from '../redux/Cart/Cart.reducer'
 function ProviderLogin() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -30,6 +31,7 @@ function ProviderLogin() {
       setIsSigning(false)
       toast.success("Logged In Successfully")
       dispatch(logout())
+      dispatch(clearCart())
       navigate('/provider/dashboard/orders');
     } else if (provider && provider.error) {
       toast.error("Invalid Credentials")

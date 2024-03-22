@@ -12,6 +12,7 @@ import { clearError } from '../redux/provider/provider.reducer'
 import logo from '../images/logo1.png'
 //import logo1 from '../images/name.png'
 import { logout } from '../redux/user/user.action'
+import { clearCart } from '../redux/Cart/Cart.reducer'
 
 function ProviderRegistration() {
   
@@ -102,6 +103,7 @@ function ProviderRegistration() {
       setIsSigning(false)
       toast.success("Registration Successfull")
       dispatch(logout());
+      dispatch(clearCart())
       navigate('/provider/dashboard');
     } else if (provider && provider.error) {
       toast.error("Invalid Credentials or Provider already exists")

@@ -35,7 +35,7 @@ export const getFoodById = (_id) => async (dispatch) => {
 };
 export const addFood = (data) => async (dispatch) => {
   try {
-    console.log(data)
+    
     dispatch(foodRequest());
     const food = await axios({
       method: "POST",

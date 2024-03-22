@@ -31,6 +31,7 @@ import AboutUspage from "./pages/AboutUspage";
 import ContactUsPage from "./pages/ContactUsPage";
 import CartPage from "./pages/CartPage";
 import { cartfoods } from "./redux/Cart/Cart.reducer";
+import ProviderAllOrders from "./components/provider/ProviderAllOrder";
 
 
 // PrivateRoute
@@ -108,6 +109,8 @@ function App() {
         }
       >
         <Route path="orders" element={<ProviderOrders />} />
+        <Route path="allorders" element={<ProviderAllOrders/>} />
+        
         <Route path="meals" element={<ProviderMeals />} />
       </Route>
     </Routes>

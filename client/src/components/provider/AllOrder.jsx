@@ -104,7 +104,7 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
 };
 
-export default function OrderTable() {
+export default function AllOrder() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(8);
   const [activeOrder, setActiveOrder] = useState('');
@@ -183,16 +183,16 @@ export default function OrderTable() {
                 <StyledTableCell align='center' className="sm:w-1/3 lg:w-1/6 whitespace-nowrap ">Quantity </StyledTableCell>
                 <StyledTableCell align='center' className="sm:w-1/3 lg:w-1/6 whitespace-nowrap ">Food Price</StyledTableCell>
                 <StyledTableCell align='center' className="sm:w-1/6 lg:w-1/10 whitespace-nowrap">TotalPrice</StyledTableCell>
-                <StyledTableCell align='center' className="sm:w-1/4 lg:w-1/3 whitespace-nowrap">Address</StyledTableCell>
+                <StyledTableCell align='center' className="sm:w-1/4 lg:w-1/3 whitespace-nowrap">{"Address"}</StyledTableCell>
                 <StyledTableCell align='center' className="sm:w-1/6 lg:w-1/10 whitespace-nowrap">PaymentStatus</StyledTableCell>
-                <StyledTableCell align='start' className="sm:w-1/6 lg:w-1/9 whitespace-nowrap">OrderStatus</StyledTableCell>
+                <StyledTableCell align='start' className="sm:w-1/6 lg:w-1/10 whitespace-nowrap">OrderStatus</StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                 {orders
-                  .filter((order) => order.orderStatus === "Ordered" )
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((order, index) => (
+                {orders
+                    .filter((order) => order.orderStatus === "Delivered" || order.orderStatus === "Cancelled")
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .map((order, index) => (
                   // Add this condition to filter orders based on the search term
                   filterOrders(order) && (
                     <StyledTableRow key={index}>
@@ -253,7 +253,7 @@ export default function OrderTable() {
                       <StyledTableCell align='center'>{order?.paymentStatus}</StyledTableCell>
                       <StyledTableCell align='center'>
                         <div className='flex items-center gap-2'>
-                       
+                          {console.log(order.orderStatus)}
                           <span>{order.orderStatus}</span>
                           {order.orderStatus === "Ordered" && (
                             <span onClick={() => setActiveOrder(order)}>
