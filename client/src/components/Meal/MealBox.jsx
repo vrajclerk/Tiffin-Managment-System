@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Skeleton from "../Skeleton";
 import { toast } from 'react-hot-toast'
@@ -26,14 +26,16 @@ import Example from "./PopUp";
 function MealBox({ foods }) {
     
   const [loading, setLoading] = useState(true);
+  
   let dispatch = useDispatch();
   let popUp = useRef()
   const cart = useSelector(cartfoods);
   const navigate=useNavigate();
    const user=useSelector((state)=>state.user.user);
 
-  console.log(cart[0] && cart[0].provider.name);
 
+
+  
   if (!foods || foods.length === 0) {
     return (
       <div className="flex items-center justify-center h-32 w-full">
@@ -42,23 +44,32 @@ function MealBox({ foods }) {
     );
   }
 
-  const handleAddtocart=(food)=>
-  {
+  const handleAddtocart = (food) => {
     if (user) {
-        cart[0]
-          ? cart[0].provider.name === food.provider.name
-            ? dispatch(addToCart(food))
-            : popUp.current.open(food)
-          : dispatch(addToCart(food));
-  
-        // Show success toast
-        toast.success('Tifin added to the cart!');
+      if (cart[0]) {
+        if (cart[0].provider.name === food.provider.name) {
+          if (cart[0].amount < food.quantity) {
+            dispatch(addToCart(food));
+            // Show success toast
+            toast.success('Tiffin added to the cart!');
+          } else {
+            // Show exceeded tiffin message
+            toast.error('Exceeded tiffin limit. Cannot add to cart.');
+          }
+        } else {
+          popUp.current.open(food);
+        }
       } else {
-        // Navigate to the sign-up page
-        alert('Please log in to continue.');
-        navigate('/signin');
+        dispatch(addToCart(food));
+        // Show success toast
+        toast.success('Tiffin added to the cart!');
       }
-    };
+    } else {
+      // Navigate to the sign-up page
+      alert('Please log in to continue.');
+      navigate('/signin');
+    }
+  };
   
   return (
     <>
@@ -116,7 +127,10 @@ function MealBox({ foods }) {
                     </div>
                       
                       <button
-                        onClick={()=>handleAddtocart(food)}
+                        onClick={()=>
+                          
+                         
+                          handleAddtocart(food)}
                         className="bg-orange-500 hover:bg-orange-500 text-white font-semibold hover:text-white py-2 px-4 border border-white   hover:border-transparent rounded"
                       >
                         Add to cart

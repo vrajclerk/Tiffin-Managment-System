@@ -22,7 +22,8 @@ function MealDetail({total}) {
         <thead>
           <tr>
             <th className="py-2 px-4 border-b text-left">Food Item</th>
-            <th className="py-2 px-4 border-b text-right">Price</th>
+            <th className="py-2 px-4 border-b text-left">Quantity</th>
+            <th className="py-2 px-4 border-b text-left">Price</th>
           </tr>
         </thead>
         <tbody>
@@ -30,7 +31,8 @@ function MealDetail({total}) {
           {cart.map((item, index) => (
             <tr key={index}>
               <td className="py-2 px-4 border-b text-left">{item.name}</td>
-              <td className="py-2 px-4 border-b text-right">₹{(item.amount)*(item.price.toFixed(2))}</td>
+              <td className="py-2 px-4 border-b text-left">{item.amount}</td>
+              <td className="py-2 px-4 border-b text-left">₹{(item.amount)*(item.price.toFixed(2))}</td>
             </tr>
             
           ))}
@@ -40,7 +42,8 @@ function MealDetail({total}) {
           </tr>
           <tr className='border-t-black text-left border-t-2' >
             <td className="py-2 px-4 border-b " >Total Amount</td>
-            <td className="py-2 px-4 border-b text-right" >₹{total}</td>
+            <td className="py-2 px-4 border-b " ></td>
+            <td className="py-2 px-4 border-b text-left" >₹{total}</td>
 
           </tr>
          
