@@ -4,7 +4,7 @@ import Aboutusimg from '../images/aboutus.jpg';
 const AboutusPara=()=>{
     return(
         <>
-        <img src={Aboutusimg} alt="About us img" className="h-full w-full heighta" style={{width:"100vw"}}  />
+        {/* <img src={Aboutusimg} alt="About us img" className="h-full w-full heighta" style={{width:"100vw"}}  /> */}
             <div className="py-4">
         
                 <h1 className="text-center text-2xl py-4 sm:text-3xl md:text-4xl" style={{fontFaimily:"unset",fontWeight:"600"}}>Welcome to TiffinBuddy</h1>

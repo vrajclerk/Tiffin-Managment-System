@@ -5,11 +5,10 @@ import AboutusPara from "../components/AboutusPara";
 import Footer from '../components/Footer';
 const AboutUspage =()=>{
     return (
-        <>
+        <div>
         <AboutusPara/>
         <Ourteamslider/>
-        {/* <Footer /> */}
-        </>
+        </div>
     );
 }
 export default HomeLayout(AboutUspage);

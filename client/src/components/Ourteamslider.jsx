@@ -50,7 +50,7 @@ const Ourteamslider=()=>{
         
         
       </Swiper>
-      {/* <Footer /> */}
+     
       </div>
     </>
  );
